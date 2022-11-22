@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" 
+rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<!-- 구글 폰트 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=PT+Sans+Narrow:wght@700&family=Passion+One&display=swap" rel="stylesheet">
+
+
+
+<!-- CSS PART -->
+    <style>
+        body{
+            padding: 0;
+            margin:  0;
+        }
+        a{
+          text-decoration: none;
+        }
+
+        /* 헤더 영역 스타일 */
+        header {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            
+            height: 100%;
+
+            display: grid;
+            grid-template-columns: 1fr 0.2fr;
+            
+            padding: 5px;
+        }
+
+        header span{
+         
+          font-size: 50px;
+          font-weight: bold;
+        }
+       
+        #hind{
+
+            height: 100%;
+           
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+        }
+        #log_sign{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        /* 콘텐츠 영역 스타일 */
+        #grid {
+            
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            
+        }
+        #menu{ 
+            margin: 0;
+           
+        }
+
+
+        /* 메뉴 영역 스타일 */
+       
+        .accordion-button:hover{
+          color: white;
+          background-color: black;
+        }
+        .accordion-button:hover{
+            color: white;
+            background-color: black;
+        }
+        .show-hover{
+          display: none;
+        }
+        .accordion-button:hover .show-hover{
+          display: block;
+        }
+        .accordion-button:hover .hidden-hover{
+          display: none;
+        }
+       .accordion-body a{
+        color: black;
+       }
+
+    
+        /* 캐러셀 스타일 */
+        
+        .carousel-item img{
+            width: 100%;
+            height: 600px;
+            padding: 10px;
+            padding-left: 70px;
+            padding-right:  70px;
+            border-radius: 5%;
+        }
+
+        /* 캐러셀 밑 영역 */
+        #aina{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        #info_qna{
+          padding: 20px;
+          display: grid;
+          grid-template-rows: 1fr 1fr;
+        }
+
+        @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+
+        #youngup{
+
+          font-weight: bold;
+          font-family: 'Hanna', fantasy;
+        }
+
+        #youngup{
+          font-size: 20px;
+        }
+
+        th, td {
+          border-bottom: 1px solid black;
+          padding: 5px;
+        }
+        #gongji
+        {
+          padding: 20px;
+          display: grid;
+          grid-template-rows: 1fr 1fr;
+        }
+        #gongji img{
+          width: 100%;
+          height: 100%;
+        }
+
+
+
+            
+        /* 푸터 영역 스타일 */
+        footer{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            
+        }
+      
+        #f_a{
+          background-color: black;
+          color: aliceblue;
+
+        }
+        #f_b{
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: black;
+            color: aliceblue;
+        }
+        
+        #f_c{  
+          background-color: black;
+          color: aliceblue;
+          display: grid;
+          grid-template-columns: 0.5fr 1fr 1fr 1fr;
+        }
+        #f_c img{  
+          padding-top: 25%;
+        }
+        #f_c span{  
+          padding-top: 35%;
+          font-size: 20px;
+        }
+        #f_c a{
+          color: white;
+        }
+        #f_c a:hover{
+          transition: all 0.2s linear;
+          transform: scale(1.2);
+        }
+
+    </style>
+
+<!-- JS PART -->
+
+<script>
+ 
+</script>
+
+
+
+</head>
+<body>
+    <!-- 헤더 영역 -->
+    <header>
+        <a href="index.html" style="color: black"><span>GANADARA DINING</span></a>
+        <div id = "hind">
+          <div>&lt닉네임&gt님 방문을 환영합니다.</div>
+          <div id = "log_sign">  
+            <div><button type="button" class="btn btn-secondary">정보 수정</button></div>
+            <div><button type="button" class="btn btn-secondary"><a href="login.html" style="color: white">로그아웃</a></button></div>
+          </div>  
+        </div>
+    </header>
+
+    <!-- 콘텐츠 표시 영역 -->
+    <div id="grid">
+
+        <!-- 메뉴 표시 영역 -->
+        <div id="menu">
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed " 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#flush-collapseOne" 
+                aria-expanded="false" 
+                aria-controls="flush-collapseOne"> 
+                  <div class="hidden-hover">PIZZA</div>
+                  <div class="show-hover">피자</div>
+                </button>
+              </h2>
+              <div id="flush-collapseOne" 
+              class="accordion-collapse collapse" 
+              aria-labelledby="flush-headingOne" 
+              data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                <a href="menu_info.html">A 피자</a>
+                </div>
+                <div class="accordion-body">
+                B 피자
+                </div>
+                <div class="accordion-body">
+                C 피자
+                </div>
+                <div class="accordion-body">
+                D 피자
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button collapsed" 
+                type="button" data-bs-toggle="collapse" 
+                data-bs-target="#flush-collapseTwo" 
+                aria-expanded="false" 
+                aria-controls="flush-collapseTwo">
+                <div class="hidden-hover">PASTA</div>
+                <div class="show-hover">파스타</div>
+                </button>
+              </h2>
+              <div id="flush-collapseTwo" 
+              class="accordion-collapse collapse" 
+              aria-labelledby="flush-headingTwo" 
+              data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  1파스타
+                </div>
+                <div class="accordion-body">
+                  2파스타
+                </div>  
+                <div class="accordion-body">
+                  3파스타
+                </div>
+                <div class="accordion-body">
+                  4파스타
+                </div>
+                <div class="accordion-body">
+                  5파스타
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingThree">
+                <button class="accordion-button collapsed" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#flush-collapseThree" 
+                aria-expanded="false" 
+                aria-controls="flush-collapseThree">
+                  <div class="hidden-hover">SALAD & BREAD</div>
+                  <div class="show-hover">샐러드와 화덕빵</div>
+                </button>
+              </h2>
+              <div id="flush-collapseThree" 
+              class="accordion-collapse collapse" 
+              aria-labelledby="flush-headingThree" 
+              data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                 ㄱ샐러드
+                </div>
+                <div class="accordion-body">
+                 ㄴ샐러드
+                </div>
+                <div class="accordion-body">
+                 ㄷ빵
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <a href="#">
+                <button class="accordion-button collapsed">
+                  <div class="hidden-hover">DRINKS</div>
+                  <div class="show-hover">마실 것</div>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div id = "a">
+
+            <!-- 캐러셀 영역 --> 
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true" style="background-image: url(food.png);">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="대문자.PNG" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="소문자.PNG"  alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="자음.PNG"  alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="모음.PNG"  alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            
+            <!-- 공지사항 / 영업정보 / 기타 문의사항 영역 -->
+            <div id="aina">
+              <div id = "gongji">
+                <div>
+                <h3>공지사항</h3> 
+                <table width = "100%">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th>+더보기</th>
+                    </tr>
+                    <tr>
+                      <th>공지</th>
+                      <th width = "60%">제목</th>
+                      <th >작성자</th>
+                      <th >작성일</th>
+                      <th>조회수</th>
+                    </tr> 
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>a</td><td>b</td><td>c</td><td>d</td><td>e</td>
+                    </tr>
+                    <tr>
+                      <td>a</td><td>b</td><td>c</td><td>d</td><td>e</td>
+                    </tr>
+                    <tr>
+                      <td>a</td><td>b</td><td>c</td><td>d</td><td>e</td>
+                    </tr>
+                    <tr>
+                      <td>a</td><td>b</td><td>c</td><td>d</td><td>e</td>
+                    </tr>
+                    <tr>
+                      <td>a</td><td>b</td><td>c</td><td>d</td><td>e</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div>
+                <img src = "양식.PNG" style="border-radius: 5%;">
+              </div>
+              </div>
+              <div id = "info_qna">
+                <div id="youngup">
+                  <div style = "font-size: 30px;">
+                    영업 정보
+                  </div> 
+                  <br>
+                  <div>● 영업시간 ▶ 11:30~23:00</div>
+                  <br>
+                  <div>● Break Time ▶ 15:00~17:00</div>
+                  <br>
+                  <div>● Last Order ▶22:00</div>
+                  <br>
+                  <div>※ 휴무일 : 매월 둘째 / 셋째주 수요일</div>
+                </div>
+                <div style="padding: 35px;">
+                  <h3>기타 문의사항 (Q&A)</h3> 
+                 
+                  <table>
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>+더보기</th>
+                      </tr>
+                      <tr>
+                        <th width = "10%">문의</th>
+                        <th width = "70%">제목</th>
+                        <th width = "10%">작성자</th>
+                        <th width = "10%">작성일</th>
+                       
+                      </tr> 
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>a</td><td>b</td><td>c</td><td>d</td>
+                      </tr>
+                      <tr>
+                        <td>a</td><td>b</td><td>c</td><td>d</td>
+                      </tr>
+                      <tr>
+                        <td>a</td><td>b</td><td>c</td><td>d</td>
+                      </tr>
+                      <tr>
+                        <td>a</td><td>b</td><td>c</td><td>d</td>
+                      </tr>
+                      <tr>
+                        <td>a</td><td>b</td><td>c</td><td>d</td>
+                      </tr>
+                    </tbody>
+                  </table>
+  
+  
+                </div>
+              </div>  
+
+            </div>  
+
+        </div>        
+    
+    
+    </div>
+
+    <!-- 푸터 영역 -->
+    <footer>
+        <div id="f_a">
+                <span style="font-weight: bold;">FOR YOU</span>
+                <br>
+                <ul>
+                  <li>채용 안내</li>
+                  <li>찾아 오시는 길</li>
+                </ul>
+                
+                <span style="font-size: 15px;">TEL : 1588-0000 / FAX : 000-0000-0000 / E-MAIL : XXXXX@GANADARA.com</span>    
+        </div>
+        <div id="f_b">
+                <h2 style="font-weight: BOLD;">GANADARA <br> DINING</h2>
+                <span style="font-size: 10px;"> GANADARA DINING. ALL RIGHTS RESERVED.
+                  <br>
+                  
+                  SOME INFORMATION ON THIS SITE MAY VARY SLIGHTLY BY
+                  LOCATION AND IN STADIUMS</span>
+        </div>
+        <div id="f_c">
+          <div style="font-weight: bold;">Social Network Service</div>
+
+          <a href="#">
+            <img src="INSTA.png">
+            <span style="font-family: 'Lobster', cursive">instagram</span>
+          </a>
+          <a href="#">
+           <img src="FACEBOOK.png">
+           <span style="font-family: 'Passion One', cursive">Facebook</span>
+          </a>
+          <a href="#">
+           <img src="YOUTUBE.png">
+           <span style="font-family: 'PT Sans Narrow', sans-serif">YouTube</span>
+          </a>  
+        </div>
+    </footer>
+</body>
+</html>
